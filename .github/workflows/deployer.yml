@@ -1,5 +1,12 @@
 name: Dummy Deployment
-on: push
+on:
+  push:
+    branches:
+      - main
+      - 'feature**'
+      - 'feature/**'
+      - 'release**'
+      - 'release/**'
 jobs:
   lint:
     runs-on: ubuntu-latest
