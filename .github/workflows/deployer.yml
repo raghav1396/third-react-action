@@ -1,0 +1,21 @@
+name: Dummy Deployment
+on: push
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: action/checkout@v3
+      - name: Install Dependencies
+        run: npm ci
+      - name: Run Linting
+        run: npm run lint
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: action/checkout@v3
+      - name: Install Dependencies
+        run: npm ci
+      - name: Run Tests
+        run: npm run test
